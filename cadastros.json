@@ -1,0 +1,15 @@
+{
+    "user": {
+        "name": "almd",
+        "email": "almd@gmail.com",
+        "password": "123456",
+        "firstName": "Almd",
+        "lastName": "byo",
+        "address": "300 Mission St 20th floor",
+        "city": "San Francisco",
+        "state": "California",
+        "zipCode": "12345",
+        "country": "United States",
+        "mobileNumber": "21981803731"
+    }
+}
