@@ -12,8 +12,7 @@ public class Cadastro {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--incognito");
 
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-
+		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 		driver.get("https://automationexercise.com/signup");
 

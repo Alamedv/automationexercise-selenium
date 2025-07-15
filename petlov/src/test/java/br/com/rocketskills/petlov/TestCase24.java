@@ -1,7 +1,5 @@
 package br.com.rocketskills.petlov;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.time.Duration;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -40,8 +38,6 @@ public class TestCase24 {
 		WebDriver driver = new ChromeDriver(options);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 		driver.get("https://automationexercise.com/");
 
@@ -54,8 +50,7 @@ public class TestCase24 {
 		driver.getTitle().contains("Automation Exercise - Checkout");
 		driver.findElement(By.xpath("//li[@class='active']")).getText().contains("Shopping Cart");
 		driver.findElement(By.xpath("//a[@class='btn btn-default check_out']")).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//u[normalize-space()='Register / Login']")))
-				.click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//u[normalize-space()='Register / Login']"))).click();
 
 		Cadastro cadastro = new Cadastro();
 		cadastro.createAccount(driver, user2);
@@ -77,5 +72,7 @@ public class TestCase24 {
 
 		driver.findElement(By.xpath("//a[@class='btn btn-primary']")).click();
 
+		DeletarCadastro deletarCadastro = new DeletarCadastro();
+		deletarCadastro.deleteAccount(driver);
 	}
 }
